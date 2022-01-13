@@ -440,7 +440,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f140d167e1763b498851b5d6c3d568a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ControlsConfig: {fileID: -944628639613478452, guid: c348712bda248c246b8c49b3db54643f,
+  ShootActionReference: {fileID: -6117370198593739630, guid: c348712bda248c246b8c49b3db54643f,
     type: 3}
   LaunchTransform: {fileID: 132271325}
   Projectile: {fileID: 2716799667095364561, guid: 8eba7148cf161c840b2e1a61b3415c14,
@@ -1242,7 +1242,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   acceleration: 100
-  maxSpeed: 2
+  maxSpeed: -6.84
   mouseSensitivity: 3
 --- !u!114 &344579134
 MonoBehaviour:
@@ -2500,11 +2500,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: -3033667219593020291, guid: 5214f1f6b583aff4187db03e5d81fe31,
         type: 3}
-    - target: {fileID: 8275927625967993986, guid: 1ed44f6ab425aa44aa5197d3b823c04c,
-        type: 3}
-      propertyPath: refractureOptions.enableRefracturing
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 1ed44f6ab425aa44aa5197d3b823c04c, type: 3}

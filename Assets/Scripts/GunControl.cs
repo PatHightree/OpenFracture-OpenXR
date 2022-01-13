@@ -1,29 +1,25 @@
-using System;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class PlayerShooting : MonoBehaviour
+public class GunControl : MonoBehaviour
 {
-    [Header("Input")] 
-    public InputActionAsset ControlsConfig;
-    // public InputActionMap ShootActionMap;
+    [Header("Input")]
+    public InputActionReference ShootActionReference;
+    
     [Space] 
     [Header("Shooting")] 
     public Transform LaunchTransform;
     public GameObject Projectile;
     public float InitialVelocity;
 
-    // private InputAction m_controllerPosition;
-    // private InputAction m_controllerRotation;
-
-    private void Start()
+    private void OnEnable()
     {
-        var controlsActionMap = ControlsConfig.FindActionMap("XRI RightHand");
-        InputAction shootAction = controlsActionMap.FindAction("Shoot");
-        shootAction.performed += OnShootPerformed;
-        // m_controllerPosition = controlsActionMap.FindAction("Position");
-        // m_controllerRotation = controlsActionMap.FindAction("Rotation");
+        ShootActionReference.action.performed += OnShootPerformed;
+    }
+
+    private void OnDisable()
+    {
+        ShootActionReference.action.performed -= OnShootPerformed;
     }
 
     private void OnShootPerformed(InputAction.CallbackContext _context)
