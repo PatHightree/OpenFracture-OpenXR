@@ -287,8 +287,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f140d167e1763b498851b5d6c3d568a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ShootActionReference: {fileID: -6117370198593739630, guid: c348712bda248c246b8c49b3db54643f,
-    type: 3}
+  ShootLeftHandActionReference: {fileID: 0}
+  ShootRightHandActionReference: {fileID: 0}
   LaunchTransform: {fileID: 4405413873772779031}
   Projectile: {fileID: 2716799667095364561, guid: 8eba7148cf161c840b2e1a61b3415c14,
     type: 3}
@@ -952,7 +952,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5857658194061840381}
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0.0553, y: 0, z: 0}
+  m_LocalPosition: {x: 0.25, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
