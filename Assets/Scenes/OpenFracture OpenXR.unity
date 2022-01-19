@@ -3672,6 +3672,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6612411867786279918, guid: bceefb2a39f6db74d9bc9d006687b7f1,
         type: 3}
+      propertyPath: m_trigger
+      value: 
+      objectReference: {fileID: 1465298920}
+    - target: {fileID: 6612411867786279918, guid: bceefb2a39f6db74d9bc9d006687b7f1,
+        type: 3}
+      propertyPath: m_travel.x
+      value: -0.068542
+      objectReference: {fileID: 0}
+    - target: {fileID: 6612411867786279918, guid: bceefb2a39f6db74d9bc9d006687b7f1,
+        type: 3}
       propertyPath: ShootLeftHandActionReference
       value: 
       objectReference: {fileID: 7141404423357169153, guid: c348712bda248c246b8c49b3db54643f,
@@ -3684,9 +3694,27 @@ PrefabInstance:
         type: 3}
     - target: {fileID: 6612411867786279918, guid: bceefb2a39f6db74d9bc9d006687b7f1,
         type: 3}
+      propertyPath: m_triggervalueActionReference
+      value: 
+      objectReference: {fileID: 6558622148059887818, guid: c348712bda248c246b8c49b3db54643f,
+        type: 3}
+    - target: {fileID: 6612411867786279918, guid: bceefb2a39f6db74d9bc9d006687b7f1,
+        type: 3}
       propertyPath: HapticEffect.m_Curve.Array.size
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 6612411867786279918, guid: bceefb2a39f6db74d9bc9d006687b7f1,
+        type: 3}
+      propertyPath: m_leftTriggerValueActionReference
+      value: 
+      objectReference: {fileID: -4289430672226363583, guid: c348712bda248c246b8c49b3db54643f,
+        type: 3}
+    - target: {fileID: 6612411867786279918, guid: bceefb2a39f6db74d9bc9d006687b7f1,
+        type: 3}
+      propertyPath: m_rightTriggervalueActionReference
+      value: 
+      objectReference: {fileID: 7904272356298805229, guid: c348712bda248c246b8c49b3db54643f,
+        type: 3}
     - target: {fileID: 6612411867786279918, guid: bceefb2a39f6db74d9bc9d006687b7f1,
         type: 3}
       propertyPath: HapticEffect.m_Curve.Array.data[0].time
@@ -3947,6 +3975,12 @@ Transform:
   m_Father: {fileID: 1207723795}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &1465298920 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3832703582600944456, guid: bceefb2a39f6db74d9bc9d006687b7f1,
+    type: 3}
+  m_PrefabInstance: {fileID: 1164400090}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1852022770
 PrefabInstance:
   m_ObjectHideFlags: 0

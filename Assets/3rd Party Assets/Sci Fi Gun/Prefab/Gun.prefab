@@ -293,6 +293,15 @@ MonoBehaviour:
   Projectile: {fileID: 2716799667095364561, guid: 8eba7148cf161c840b2e1a61b3415c14,
     type: 3}
   InitialVelocity: 100
+  HapticEffect:
+    serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  m_triggervalueActionReference: {fileID: 0}
+  m_trigger: {fileID: 0}
+  m_travel: {x: 0, y: 0, z: 0}
 --- !u!54 &6246070477605247690
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -753,7 +762,7 @@ GameObject:
   - component: {fileID: 3832703582604335974}
   - component: {fileID: 3832703582603237798}
   m_Layer: 0
-  m_Name: Gun_Tigger
+  m_Name: Gun_Trigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
