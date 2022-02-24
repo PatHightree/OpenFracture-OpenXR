@@ -76,6 +76,7 @@ namespace OpenXR_OpenFracture
 
         private void OnShootPerformed(InputAction.CallbackContext _context)
         {
+            Debug.Log("PEW!");
             // Don't shoot the gun if it isn't grabbed
             if (m_handHoldingTheGun == Hand.None) return;
             // Don't shoot if the trigger that was pulled isn't on the controller that's holding the gun
