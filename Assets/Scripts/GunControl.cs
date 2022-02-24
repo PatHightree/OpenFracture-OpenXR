@@ -46,7 +46,10 @@ namespace OpenXR_OpenFracture
             {
                 m_interactorHoldingTheGun = selectEnterEventArgs.interactorObject;
                 m_controllerHoldingTheGun = selectEnterEventArgs.interactorObject.transform.GetComponent<ActionBasedController>();
-                m_handHoldingTheGun = m_controllerHoldingTheGun.selectAction.action.actionMap == m_rightHandActionMap ? Hand.Right : Hand.Left;
+                if (m_controllerHoldingTheGun != null)
+                    m_handHoldingTheGun = m_controllerHoldingTheGun.selectAction.action.actionMap == m_rightHandActionMap ? Hand.Right : Hand.Left;
+                else
+                    m_handHoldingTheGun = Hand.None;
             });
             m_grabInteractable.selectExited.AddListener(_ =>
             {
