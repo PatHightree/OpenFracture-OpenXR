@@ -46,7 +46,10 @@ namespace OpenXR_OpenFracture
             {
                 m_interactorHoldingTheGun = selectEnterEventArgs.interactorObject;
                 m_controllerHoldingTheGun = selectEnterEventArgs.interactorObject.transform.GetComponent<ActionBasedController>();
-                m_handHoldingTheGun = m_controllerHoldingTheGun.selectAction.action.actionMap == m_rightHandActionMap ? Hand.Right : Hand.Left;
+                if (m_controllerHoldingTheGun != null)
+                    m_handHoldingTheGun = m_controllerHoldingTheGun.selectAction.action.actionMap == m_rightHandActionMap ? Hand.Right : Hand.Left;
+                else
+                    m_handHoldingTheGun = Hand.None;
             });
             m_grabInteractable.selectExited.AddListener(_ =>
             {
@@ -73,6 +76,7 @@ namespace OpenXR_OpenFracture
 
         private void OnShootPerformed(InputAction.CallbackContext _context)
         {
+            Debug.Log("PEW!");
             // Don't shoot the gun if it isn't grabbed
             if (m_handHoldingTheGun == Hand.None) return;
             // Don't shoot if the trigger that was pulled isn't on the controller that's holding the gun
