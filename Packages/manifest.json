@@ -1,6 +1,7 @@
 {
   "dependencies": {
     "com.dgreenheck.openfracture": "https://github.com/dgreenheck/OpenFracture.git",
+    "com.unity.animation.rigging": "1.1.1",
     "com.unity.ide.rider": "3.0.15",
     "com.unity.learn.iet-framework": "2.1.1",
     "com.unity.test-framework": "1.1.30",
