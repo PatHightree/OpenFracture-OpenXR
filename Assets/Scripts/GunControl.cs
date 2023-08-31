@@ -30,6 +30,7 @@ namespace OpenXR_OpenFracture
         private InputActionMap m_rightHandActionMap;
         private Hand m_handHoldingTheGun;
         private Vector3 m_triggerStartPosition;
+        private Rigidbody m_projectileRb;
 
         private void OnEnable()
         {
@@ -57,6 +58,7 @@ namespace OpenXR_OpenFracture
                 m_controllerHoldingTheGun = null;
                 m_handHoldingTheGun = Hand.None;
             });
+            m_projectileRb = Projectile.GetComponent<Rigidbody>();
         }
 
         private void OnDisable()
@@ -76,7 +78,7 @@ namespace OpenXR_OpenFracture
 
         private void OnShootPerformed(InputAction.CallbackContext _context)
         {
-            Debug.Log("PEW!");
+            // Debug.Log("PEW!");
             // Don't shoot the gun if it isn't grabbed
             if (m_handHoldingTheGun == Hand.None) return;
             // Don't shoot if the trigger that was pulled isn't on the controller that's holding the gun
@@ -85,12 +87,8 @@ namespace OpenXR_OpenFracture
             // Vibrate controller
             StartCoroutine(PlayHapticEffect(m_controllerHoldingTheGun, HapticEffect));
 
-            // Remove other projectiles from the scene
-            foreach (GameObject obj in GameObject.FindGameObjectsWithTag("Projectile"))
-                Destroy(obj);
-
-            GameObject projectileInstance = Instantiate(Projectile, LaunchTransform.position, Quaternion.identity);
-            projectileInstance.GetComponent<Rigidbody>().velocity = InitialVelocity * LaunchTransform.forward;
+            m_projectileRb.position = LaunchTransform.position;
+            m_projectileRb.velocity = InitialVelocity * LaunchTransform.forward;
         }
 
         private IEnumerator PlayHapticEffect(ActionBasedController _controller, AnimationCurve _hapticEffect)

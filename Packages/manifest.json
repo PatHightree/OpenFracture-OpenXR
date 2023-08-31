@@ -2,7 +2,6 @@
   "dependencies": {
     "com.dgreenheck.openfracture": "https://github.com/dgreenheck/OpenFracture.git",
     "com.unity.ide.rider": "3.0.24",
-    "com.unity.learn.iet-framework": "2.1.1",
     "com.unity.test-framework": "1.1.31",
     "com.unity.textmeshpro": "3.0.6",
     "com.unity.ugui": "1.0.0",
