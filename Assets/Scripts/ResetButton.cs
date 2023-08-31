@@ -1,9 +1,9 @@
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class ResetButton : MonoBehaviour
 {
+    public bool SpawnObjectsAtStart;
     public List<GameObject> ObjectsToSpawn;
 
     private List<GameObject> SpawnedObjects;
@@ -11,8 +11,9 @@ public class ResetButton : MonoBehaviour
     public void Awake()
     {
         SpawnedObjects = new List<GameObject>();
-        foreach (GameObject o in ObjectsToSpawn)
-            SpawnedObjects.Add(Instantiate(o));
+        if (SpawnObjectsAtStart)
+            foreach (GameObject o in ObjectsToSpawn)
+                SpawnedObjects.Add(Instantiate(o));
     }
 
     public void Reset()

@@ -6,8 +6,8 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/OpenFracture OpenXR.unity
-    guid: 8b19ec7d653af5c42b82cc1578c4f4e3
+    path: Assets/- Hackathon 2023 -/Scenes/OpenFracture Fire test.unity
+    guid: be4069251675f414db6e0978d9c6f295
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: bfa1182bd221b4ca89619141f66f1260,
       type: 2}
