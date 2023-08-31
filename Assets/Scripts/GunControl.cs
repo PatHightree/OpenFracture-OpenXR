@@ -1,6 +1,7 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.Serialization;
 using UnityEngine.XR.Interaction.Toolkit;
 
 namespace OpenXR_OpenFracture
@@ -24,11 +25,12 @@ namespace OpenXR_OpenFracture
         [SerializeField] private Transform m_trigger;
         [SerializeField] private Vector3 m_travel;
 
+        public Hand HandHoldingTheGun;
+
         private XRGrabInteractable m_grabInteractable;
         private IXRSelectInteractor m_interactorHoldingTheGun;
         private ActionBasedController m_controllerHoldingTheGun;
         private InputActionMap m_rightHandActionMap;
-        private Hand m_handHoldingTheGun;
         private Vector3 m_triggerStartPosition;
         private Rigidbody m_projectileRb;
 
@@ -48,15 +50,15 @@ namespace OpenXR_OpenFracture
                 m_interactorHoldingTheGun = selectEnterEventArgs.interactorObject;
                 m_controllerHoldingTheGun = selectEnterEventArgs.interactorObject.transform.GetComponent<ActionBasedController>();
                 if (m_controllerHoldingTheGun != null)
-                    m_handHoldingTheGun = m_controllerHoldingTheGun.selectAction.action.actionMap == m_rightHandActionMap ? Hand.Right : Hand.Left;
+                    HandHoldingTheGun = m_controllerHoldingTheGun.selectAction.action.actionMap == m_rightHandActionMap ? Hand.Right : Hand.Left;
                 else
-                    m_handHoldingTheGun = Hand.None;
+                    HandHoldingTheGun = Hand.None;
             });
             m_grabInteractable.selectExited.AddListener(_ =>
             {
                 m_interactorHoldingTheGun = null;
                 m_controllerHoldingTheGun = null;
-                m_handHoldingTheGun = Hand.None;
+                HandHoldingTheGun = Hand.None;
             });
             m_projectileRb = Projectile.GetComponent<Rigidbody>();
         }
@@ -80,9 +82,9 @@ namespace OpenXR_OpenFracture
         {
             // Debug.Log("PEW!");
             // Don't shoot the gun if it isn't grabbed
-            if (m_handHoldingTheGun == Hand.None) return;
+            if (HandHoldingTheGun == Hand.None) return;
             // Don't shoot if the trigger that was pulled isn't on the controller that's holding the gun
-            if (_context.GetHand() != m_handHoldingTheGun) return;
+            if (_context.GetHand() != HandHoldingTheGun) return;
 
             // Vibrate controller
             StartCoroutine(PlayHapticEffect(m_controllerHoldingTheGun, HapticEffect));

@@ -8,7 +8,7 @@ public class EmitterControl : MonoBehaviour
     public float StartSize = 0.2f;
     public float MaxSize = 1;
     public float StepSize = 0.2f;
-    
+  
     private void OnCollisionEnter(Collision other)
     {
         if (other.gameObject.CompareTag("Projectile"))
